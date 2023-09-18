@@ -13,27 +13,20 @@ In this assignment, you will learn more about asymptotic notation, parallelism, 
 
   - 1a. Is $2^{n+1} \in O(2^n)$? Why or why not? 
 
-  Yes, because since $f(n)$ is equal to $2^{n+1}$ and $g(n)$ is equal to $(2^n)$, and we can then have constants of C = 2 and k = 1 to show that $|2^{n+1}| \leq C|2^n|$ for all $n \geq k$. This can thn become the inequality of $|2^{n+1}| = 2^{n+1} \leq 2 \cdot 2^n = 2|2^n|$, showing that for all $n \geq 1$, the inequality $|2^{n+1}| \leq 2|2^n|$ is true.
-
-
+  Yes, because since $f(n)$ is equal to $2^{n+1}$ and $g(n)$ is equal to $(2^n)$, and we can then have constants of C = 2 and k = 1 to show that $|2^{n+1}| \leq C|2^n|$ for all $n \geq k$. This can then become the inequality of $|2^{n+1}| = 2^{n+1} \leq 2 \cdot 2^n = 2|2^n|$, showing that for all $n \geq 1$, the inequality $|2^{n+1}| \leq 2|2^n|$ is true.
   
   - 1b. Is $2^{2^n} \in O(2^n)$? Why or why not?     
-.  
-.  
-.  
-.  
-.  
+
+  No, because (using the same reasoning as the previous question) you would need to find values for C and k which make $|2^{2^n}| \leq C|2^n|$ for all $n \geq k$ true, which is impossible. The function $2^{2^n}$ grows much faster than $2^n$, and so there are no values for C and k which make the inequality true.
+  
   - 1c. Is $n^{1.01} \in O(\mathrm{log}^2 n)$?    
-.  
-.  
-.  
-.  
+
+  No, because $n^{1.01}$ grows much faster than $(\mathrm{log}^2 n)$, meaning there is no value of C and k to make the inequality true.
 
   - 1d. Is $n^{1.01} \in \Omega(\mathrm{log}^2 n)$?  
-.  
-.  
-.  
-.  
+
+  Yes, becuase in Big Omega notation, a function $f(n)$ is in a set $\Omega(g(n))$ if positive contants of $C$ and $k$ exist such that the inequality $|f(n)| \geq C|g(n)|$ is true. When we choose $C = 1$ and $k = 1$, the inequality becomes $n^{1.01} \geq \log^2 n$ which is true because the function $2^{2^n}$ grows much faster than $2^n$.
+
   - 1e. Is $\sqrt{n} \in O((\mathrm{log} n)^3)$?  
 .  
 .  

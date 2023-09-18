@@ -55,16 +55,8 @@ $$
   - 2a. (6 pts) Translate this to Python code -- fill in the `def foo` method in `main.py`  
 
   - 2b. (6 pts) What does this function do, in your own words?  
-
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-  
+ 
+  Foo calculates the nth (or xth) number in the Fibonacci sequence. It starts with an input x, and if x is 0 or 1, it returns x. If not, it recursively adds the results of foo(x-1) and foo(x-2) to compute the Fibonacci number. It keeps calling foo recursively until the called number is 0 or 1, which then starts adding up all those values.
 
 3. **Parallelism and recursion** (26 pts)
 

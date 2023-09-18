@@ -25,13 +25,12 @@ In this assignment, you will learn more about asymptotic notation, parallelism, 
 
   - 1d. Is $n^{1.01} \in \Omega(\mathrm{log}^2 n)$?  
 
-  Yes, becuase in Big Omega notation, a function $f(n)$ is in a set $\Omega(g(n))$ if positive contants of $C$ and $k$ exist such that the inequality $|f(n)| \geq C|g(n)|$ is true. When we choose $C = 1$ and $k = 1$, the inequality becomes $n^{1.01} \geq \log^2 n$ which is true because the function $2^{2^n}$ grows much faster than $2^n$.
+  Yes, becuase in Big Omega notation, a function $f(n)$ is in a set $\Omega(g(n))$ if positive contants of $C$ and $k$ exist such that the inequality $|f(n)| \geq C|g(n)|$ is true. When we choose $C = 1$ and $k = 1$, the inequality becomes $n^{1.01} \geq \log^2 n$ which is true because the function $n^{1.01}$ grows much faster than $\log^2 n$.
 
   - 1e. Is $\sqrt{n} \in O((\mathrm{log} n)^3)$?  
-.  
-.  
-.  
-.  
+
+  No, because $\sqrt{n}$ grows faster than $(\mathrm{log} n)^3)$, so the inequality  $|\sqrt{n}| \leq C|(\log n)^3|$ can never be true.
+
   - 1f. Is $\sqrt{n} \in \Omega((\mathrm{log} n)^3)$?  
 .  
 
@@ -39,6 +38,7 @@ In this assignment, you will learn more about asymptotic notation, parallelism, 
 2. **SPARC to Python** (12 pts)
 
 Consider the following SPARC code of the Fibonacci sequence, which is the series of numbers where each number is the sum of the two preceding numbers. For example, 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610 ... 
+
 $$
 \begin{array}{l}
 \mathit{foo}~x =   \\

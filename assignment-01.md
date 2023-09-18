@@ -32,7 +32,8 @@ In this assignment, you will learn more about asymptotic notation, parallelism, 
   No, because $\sqrt{n}$ grows faster than $(\mathrm{log} n)^3)$, so the inequality  $|\sqrt{n}| \leq C|(\log n)^3|$ can never be true.
 
   - 1f. Is $\sqrt{n} \in \Omega((\mathrm{log} n)^3)$?  
-.  
+
+  Yes, because if we choose $C = 1$ and $k = 1$ then we have the inequality $|\sqrt{n}| = \sqrt{n} \geq 1 \cdot (\log n)^3$ which is true, meaning that $\sqrt{n} \in \Omega((\mathrm{log} n)^3)$.
 
 
 2. **SPARC to Python** (12 pts)

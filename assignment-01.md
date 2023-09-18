@@ -40,7 +40,7 @@ In this assignment, you will learn more about asymptotic notation, parallelism, 
 
 Consider the following SPARC code of the Fibonacci sequence, which is the series of numbers where each number is the sum of the two preceding numbers. For example, 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610 ... 
 
-$$
+
 \begin{array}{l}
 \mathit{foo}~x =   \\
 ~~~~\texttt{if}{}~~x \le 1~~\texttt{then}{}\\
@@ -50,7 +50,6 @@ $$
 ~~~~~~~~~~~~ra + rb\\  
 ~~~~~~~~\texttt{end}{}.\\
 \end{array}
-$$ 
 
   - 2a. (6 pts) Translate this to Python code -- fill in the `def foo` method in `main.py`  
 

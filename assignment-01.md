@@ -36,6 +36,8 @@ In this assignment, you will learn more about asymptotic notation, parallelism, 
   Yes, because if we choose $C = 1$ and $k = 1$ then we have the inequality $|\sqrt{n}| = \sqrt{n} \geq 1 \cdot (\log n)^3$ which is true, meaning that $\sqrt{n} \in \Omega((\mathrm{log} n)^3)$.
 
 
+
+
 2. **SPARC to Python** (12 pts)
 
 Consider the following SPARC code of the Fibonacci sequence, which is the series of numbers where each number is the sum of the two preceding numbers. For example, 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610 ... 
@@ -59,6 +61,9 @@ Consider the following SPARC code of the Fibonacci sequence, which is the series
  
   Foo calculates the nth (or xth) number in the Fibonacci sequence. It starts with an input x, and if x is 0 or 1, it returns x. If not, it recursively adds the results of foo(x-1) and foo(x-2) to compute the Fibonacci number. It keeps calling foo recursively until the called number is 0 or 1, which then starts adding up all those values.
 
+
+
+
 3. **Parallelism and recursion** (26 pts)
 
 Consider the following function:  
@@ -78,42 +83,16 @@ E.g., `longest_run([2,12,12,8,12,12,12,0,12,1], 12) == 3`
   - 3a. (7 pts) First, implement an iterative, sequential version of `longest_run` in `main.py`.  
 
   - 3b. (4 pts) What is the Work and Span of this implementation?  
-
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-
+  
+  The work for this function is O(n) because the worst case for this function is searching through each value of myArray. The span is also O(n) because there are no parallel operations that are performed.
 
   - 3c. (7 pts) Next, implement a `longest_run_recursive`, a recursive, divide and conquer implementation. This is analogous to our implementation of `sum_list_recursive`. To do so, you will need to think about how to combine partial solutions from each recursive call. Make use of the provided class `Result`.   
 
   - 3d. (4 pts) What is the Work and Span of this sequential algorithm?  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
 
+  The work is equal to O(n), because it performs a sequential number of tasks that are all a constant number in relation to the size (n) of the input. The span is equal to O(log n) because the input list is divided into two halves at each level of recursion, and since span is the longest chain of operations, the max depth of the recursion is O(log n).
 
   - 3e. (4 pts) Assume that we parallelize in a similar way we did with `sum_list_recursive`. That is, each recursive call spawns a new thread. What is the Work and Span of this algorithm?  
 
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-
+  The work is equal to O(n log n) because at each level of recursion, there are two seperate operations (the left and the right halves of the list), and they can be executed at the same time/in parallel. Therefore, the work at each level is O(n) for n elements. The number of levels of recursion is proportional to the log of the length of the input list so O(log n). Then the total work (the sum of all levels) of the parallelized algorithm is O(n log n). 
+  The span is equal to O(log n) because t each level of recursion, the work can be divided into two independent operations that can be executed at the same time, so the span for each level is O(1). Since each level can be executed in parallel, and there are O(log n) levels of recursion, the overall span of the parallelized algorithm is O(log n).
